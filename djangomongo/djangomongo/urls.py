@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from dmdemo.api.views import FormViewSet
+from dmdemo.api.views import FormViewSet, CustomFieldViewSet
 from rest_framework import routers
 router = routers.DefaultRouter()
-router.register(r'', FormViewSet, base_name='')
+# router.register(r'', FormViewSet, base_name='')
+router.register(r'', CustomFieldViewSet, base_name='customfield')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
